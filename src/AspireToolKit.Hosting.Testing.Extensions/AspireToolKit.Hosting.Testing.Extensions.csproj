@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
+    <AssemblyName>AspireToolKit.Hosting.Testing.Extensions</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
