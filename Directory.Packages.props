@@ -13,6 +13,7 @@
     <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="$(AspireVersion)" />
     <PackageVersion Include="Aspire.Azure.Data.Tables" Version="$(AspireVersion)" />
     <PackageVersion Include="Aspire.Hosting.Testing" Version="$(AspireVersion)" />
+    <PackageVersion Include="DotNet.ReproducibleBuilds.Isolated" Version="1.2.4" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
     <PackageVersion Include="MSTest.TestAdapter" Version="$(MSTestVersion)" />
     <PackageVersion Include="MSTest.TestFramework" Version="$(MSTestVersion)" />
