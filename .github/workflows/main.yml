@@ -21,7 +21,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest ]
+        os: [ ubuntu-latest ]
 
     runs-on: ${{ matrix.os }}
 
@@ -55,3 +55,5 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:csharp"
+    - name: DotNet Pack
+      run: dotnet pack --configuration Release --output ./artifacts/packages
