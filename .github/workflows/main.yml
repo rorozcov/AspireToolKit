@@ -61,7 +61,7 @@ jobs:
         category: "/language:csharp"
     - name: DotNet Pack
       run: dotnet pack --configuration Release --output ./artifacts/packages
-    - name: Upload NuGet Packages
+    - name: Upload NuGet Packages To Artifacts
       uses: actions/upload-artifact@v4
       if: success()
       with:
