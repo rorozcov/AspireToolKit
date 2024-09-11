@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireToolKit.Hosting.Testi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.AppHost", "TestProject\TestProject.AppHost\TestProject.AppHost.csproj", "{A37BFE89-544C-415A-97A0-3AEEFB3CA443}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireToolKit", "src\AspireToolKit\AspireToolKit.csproj", "{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A37BFE89-544C-415A-97A0-3AEEFB3CA443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A37BFE89-544C-415A-97A0-3AEEFB3CA443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A37BFE89-544C-415A-97A0-3AEEFB3CA443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +47,6 @@ Global
 		{33BDAFA6-37B2-49C0-83B2-031CAEF67D58} = {952CCE42-9EB9-4C7B-AF96-FCB910F12F0E}
 		{221EC017-1335-4D1D-B2FE-BD0F60CDC92F} = {533A0C3C-1324-4B2C-8767-ADFEE289CEA6}
 		{A37BFE89-544C-415A-97A0-3AEEFB3CA443} = {6EE9EEB7-E37B-40FD-B1B7-30E8A71A95B9}
+		{EB8A9CA6-BFF9-445A-8844-DA0AD818D99D} = {952CCE42-9EB9-4C7B-AF96-FCB910F12F0E}
 	EndGlobalSection
 EndGlobal

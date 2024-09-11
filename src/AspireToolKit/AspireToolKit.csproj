@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+        <OutputType>Library</OutputType>
+        <RootNamespace>AspireToolKit</RootNamespace>
+        <AssemblyName>$(RootNamespace)</AssemblyName>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Package metadata">
+        <PackageId>AspireToolKit</PackageId>
+        <Authors>Rodolfo Orozco Vasquez</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/rorozcov/AspireToolKit</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>All AspireToolKit packages bundled together.</Description>
+        <PackageReleaseNotes>A changelog is available at https://github.com/rorozcov/AspireToolKit/releases</PackageReleaseNotes>
+        <Copyright>2024 Rodolfo Orozco Vasquez</Copyright>
+        <PackageTags>dotnet, aspire, csharp, improvement</PackageTags>
+        <DevelopmentDependency>true</DevelopmentDependency>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(RepoRoot)\README.md" Pack="true" PackagePath="/" />
+    </ItemGroup>
+
+    <ItemGroup><!-- Add other AspireToolKit package references here -->
+      <ProjectReference Include="..\AspireToolKit.Hosting.Testing.Extensions\AspireToolKit.Hosting.Testing.Extensions.csproj" />
+    </ItemGroup>
+
+</Project>
