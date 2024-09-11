@@ -10,6 +10,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '19 16 * * 5'
+  workflow_call:
 
 permissions:
   security-events: write
