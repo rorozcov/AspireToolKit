@@ -1,0 +1,42 @@
+name: Release publish
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+      - edited
+      - prereleased
+      - released
+
+permissions:
+  security-events: write
+  packages: read
+  contents: read
+  actions: read
+
+env:
+  PublicRelease: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          path: packages
+          pattern: packages-aspire-toolkit
+          merge-multiple: true
+      - name: Publish NuGet package
+        shell: pwsh
+        run: |
+          foreach ($file in (Get-ChildItem ./packages/release -Recurse -Include *.nupkg)) {
+            echo "NuGet publish for file: '$file'"            
+            dotnet nuget push $file --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          }
+  
