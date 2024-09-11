@@ -6,8 +6,27 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
-    <AssemblyName>AspireToolKit.Hosting.Testing.Extensions</AssemblyName>
+    <RootNamespace>AspireToolKit</RootNamespace>
+    <AssemblyName>$(RootNamespace).Hosting.Testing.Extensions</AssemblyName>
   </PropertyGroup>
+
+  <PropertyGroup Label="Package metadata">
+    <PackageId>AspireToolKit.Hosting.Testing.Extensions</PackageId>
+    <Authors>Rodolfo Orozco Vasquez</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/rorozcov/AspireToolKit</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Extensions for .NET Aspire integration testing to simplify and improve the user experience when testing.</Description>
+    <PackageReleaseNotes>A changelog is available at https://github.com/rorozcov/AspireToolKit/releases</PackageReleaseNotes>
+    <Copyright>2024 Rodolfo Orozco Vasquez</Copyright>
+    <PackageTags>dotnet, aspire, csharp, improvement</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="$(RepoRoot)\README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Azure.Storage.Queues" />

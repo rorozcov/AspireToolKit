@@ -45,6 +45,8 @@ jobs:
         global-json-file: ./global.json
     - name: Restore workloads
       run: dotnet workload restore
+    - name: Restore tools
+      run: dotnet tool restore
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -57,3 +59,11 @@ jobs:
         category: "/language:csharp"
     - name: DotNet Pack
       run: dotnet pack --configuration Release --output ./artifacts/packages
+    - name: Upload NuGet Packages
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: packages-aspire-toolkit
+        path: |
+          ./artifacts/packages
+        if-no-files-found: error
