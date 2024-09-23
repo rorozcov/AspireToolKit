@@ -1,3 +1,5 @@
+using Aspire.Hosting.Azure;
+
 namespace AspireToolKit.Hosting.Testing.Extensions.Tests;
 
 using System.Threading.Tasks;
@@ -17,7 +19,16 @@ public class TestExtensionCreatedClientsCanPingResources
         {
             clientBuilder.AddStandardResilienceHandler();
         });
+
+        var resource = (AzureStorageResource)appHost.Resources.Single(resource =>
+            string.Equals(resource.Name, TestProjectConstants.TestStorageAccountAspireResourceName));
         
+        var storageBuilder = appHost.CreateResourceBuilder(resource);
+
+        storageBuilder.WithAnnotation(new ContainerMountAnnotation(
+            "/home/rorozcov/Github/AspireToolKit/tools/azuriteDataGenerator/test/data", "/data",
+            ContainerMountType.BindMount, false));
+
         await using var app = await appHost.BuildAsync();
         var resourceNotificationService = app.Services.GetRequiredService<ResourceNotificationService>();
         await app.StartAsync();
